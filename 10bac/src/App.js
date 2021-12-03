@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Root from './routes/Root/Root';
 import Register from './routes/Register/Register';
 import Login from './routes/Login/Login';
+import Profile from "./routes/Profile/Profile.jsx"
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/istoric" element={<Root />} />
           <Route path="/inregistrare" element={<Register />} />
           <Route path="/autentificare" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </div>
