@@ -6,5 +6,5 @@ const adminApi = require('./routes/admin')
 
 
 router.use('/user', userApi)
-router.use('/admin', adminApi)
+//router.use('/admin', adminApi)
 module.exports = router

@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const app = express();
 const middlewares = require("./middlewares");
-
+const api = require('./api')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
