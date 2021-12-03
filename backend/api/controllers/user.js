@@ -52,8 +52,7 @@ const registerController = async (req, res) => {
       _id: new mongoose.Types.ObjectId(),
       name,
       surname,
-      profile_pic:
-        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      profile_pic:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       email,
       password: hashedPassword,
       role: "user",
@@ -72,8 +71,15 @@ const getUserProfileController = async (req, res) => {
   res.send(await functions.getUserByIdFromToken(token));
 };
 
+const updateUserProfileController = async(req,res) => {
+  const token = req.headers.authorization.split(" ")[1]
+  res.send(await functions.updateUserProfile(token,req.body));
+}
+
+
 module.exports = {
   loginController,
   registerController,
   getUserProfileController,
+  updateUserProfileController
 };
