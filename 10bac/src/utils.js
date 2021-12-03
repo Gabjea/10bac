@@ -1,4 +1,5 @@
 import axios from "axios";
+import globalVars from "./globalVars";
 
 export function setCookie(cname, cvalue, exsecs = 1e10) {
     const date = new Date();
@@ -29,14 +30,11 @@ export function isLoggedIn() {
 }
 
 export async function getUserDataFromJwtReq() {
-    const authURL = 'http://79.118.160.229:1337/api/v1/user/account';
+    const authURL = globalVars.apiPrefix + '/user/profile';
     const res = await axios.get(authURL, {
         headers: {
             Authorization: getCookie('jwt')
         }
     });
-    if (res.data.username == null) {
-        return null;
-    }
     return res.data;
 }
