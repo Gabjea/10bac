@@ -18,6 +18,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0",
-    "passport": "^0.5.0"
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0"
   }
 }
