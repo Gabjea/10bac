@@ -1,34 +1,34 @@
-.Root .description {
+.Subject .description {
   line-height: 1.7;
   font-size: var(--small-font);
   margin-bottom: 2em;
 }
 
-.Root .description span {
+.Subject .description span {
   color: var(--blue);
   font-weight: 700;
 }
 
-.Root .table {
+.Subject .table {
   width: 80%;
   margin: 0 auto;
   /* background: green; */
 }
 
-.Root .top {
+.Subject .top {
   width: 80%;
   margin: 0 auto;
 }
 
-.Root .table .row,
-.Root .table .top-row {
+.Subject .table .row,
+.Subject .table .top-row {
   width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 0.3em;
 }
 
-.Root .table .top-row {
+.Subject .table .top-row {
   background: var(--purple);
   border-radius: 6px;
   border-bottom-left-radius: 0px;
@@ -36,64 +36,74 @@
   padding: 0.7em;
 }
 
-.Root .table .top-row {
+.Subject .table .top-row {
   height: 4em;
   align-items: center;
 }
 
-.Root .table .row {
+.Subject .table .row {
   height: 3em;
   align-items: center;
   color: #000;
 }
 
-.Root .table .row.last {
+.Subject .table .row.last {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.Root .table .row .icon {
+.Subject .table .row .icon {
   margin-right: 0.6em;
   color: var(--purple);
 }
 
-.Root .table .top-row p {
+.Subject .table .top-row p {
   font-weight: 700;
   color: #fff;
 }
 
-.Root .table .row p,
-.Root .table .top-row p {
+.Subject .table .row p,
+.Subject .table .top-row p {
   text-align: center;
   width: 33%;
 }
 
-.Root .table .row p.left,
-.Root .table .top-row p.left {
+.Subject .table .row p.left,
+.Subject .table .top-row p.left {
   text-align: left;
   margin-left: 3em;
 }
 
-.Root .table .row p.right,
-.Root .table .top-row p.right {
+.Subject .table .row p.right,
+.Subject .table .top-row p.right {
   text-align: right;
   margin-right: 3em;
 }
 
-.Root .row {
+.Subject .row {
   background: var(--dark-pink);
   cursor: pointer;
 }
 
-.Root .row.even {
+.Subject .row.even {
   background: var(--light-pink);
 }
 
-.Root .row:hover {
+.Subject .row:hover {
   background: var(--blue);
   transition: var(--transition-time);
 }
 
-.Root .row:hover > p {
+.Subject .row:hover > p {
   color: #fff;
+}
+
+.Subject .left span {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.Subject .top span {
+  font-size: var(--large-font);
+  color: var(--blue);
 }
