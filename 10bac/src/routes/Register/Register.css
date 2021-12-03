@@ -1,0 +1,97 @@
+.Register {
+  display: flex;
+  justify-content: center;
+}
+
+.Register form {
+  display: flex;
+
+  color: #fff;
+  padding: 3em;
+  border-radius: 10px;
+  background: var(--purple);
+  width: 55em;
+  border-bottom: 10px solid var(--blue);
+}
+
+.Register form p {
+  line-height: 1.7;
+  padding-right: 1em;
+}
+
+.Register form p a {
+  color: var(--blue);
+}
+
+.Register form .left {
+  width: 50%;
+}
+
+.Register form .left img {
+  margin-top: 1em;
+  height: 20em;
+}
+
+.Register form .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Login form .right {
+  justify-content: flex-start;
+}
+
+.Login form input {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.Login form button {
+  margin-top: 5em;
+}
+
+.Register form input::placeholder {
+  color: #fff;
+}
+
+.Register form input {
+  display: block;
+  height: 3.3em;
+  margin-bottom: 0;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: none;
+  background: var(--dark-purple);
+  border: 2px solid var(--dark-purple);
+  border-left-color: var(--blue);
+  color: #fff;
+  outline: none;
+}
+
+.Register form input:focus {
+  border: 2px solid #fff;
+}
+
+.Register form button {
+  width: 8em;
+  border-radius: 6px;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+  background: var(--dark-purple);
+  color: #fff;
+  border-bottom: 2px solid var(--dark-purple);
+}
+
+.Register form button:hover {
+  border-bottom-color: var(--blue);
+}
+
+.Register form .error {
+  font-size: 16px;
+  color: var(--red);
+  font-weight: 700;
+  user-select: none;
+}

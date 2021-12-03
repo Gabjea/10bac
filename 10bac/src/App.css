@@ -30,7 +30,7 @@ h1 {
 
 h2 {
   font-size: var(--large-font);
-  color: var(--dark-purple);
+  /* color: var(--dark-purple); */
   margin-bottom: 1em;
 }
 
@@ -44,6 +44,7 @@ span {
   --blue: #34ace0;
   --light-pink: #f3edfa;
   --dark-pink: #f7f4fa;
+  --red: rgb(184, 44, 44);
 
   --small-font: 17px;
   --medium-font: 20px;

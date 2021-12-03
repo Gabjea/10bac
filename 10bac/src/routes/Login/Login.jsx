@@ -1,62 +1,72 @@
-import React from "react";
-import "./Login.css";
-import axios from "axios";
-import { isLoggedIn, setCookie } from "../../utils";
-const url = "http://79.113.201.115:5000/api/v1/user/login";
+import React, { useState } from 'react';
+import './Login.css';
+import axios from 'axios';
+import { isLoggedIn, setCookie } from '../../utils';
+import studentImg from './../../assets/student.png';
+
+const url = 'http://79.113.201.115:5000/api/v1/user/login';
 
 export default function Login() {
-	const emailRef = React.createRef();
-	const passwordRef = React.createRef();
+  const [error, setError] = useState('x');
 
-    React.useEffect(() => {
-        if (isLoggedIn()) {
-            window.location.assign('/');
+  const emailRef = React.createRef();
+  const passwordRef = React.createRef();
+
+  React.useEffect(() => {
+    if (isLoggedIn()) {
+      window.location.href = '/';
+    }
+  }, []);
+
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+    const { value: email } = emailRef.current;
+    const { value: password } = passwordRef.current;
+
+    if (!email || !password) return setError('Completează ambele câmpuri și încearcă din nou!');
+
+    axios
+      .post(url, {
+        email,
+        password
+      })
+      .then(
+        res => {
+          setCookie('jwt', res.data.token);
+          window.location.assign('/');
+        },
+        err => {
+          return setError('Email-ul și parola nu coincid!');
         }
-    }, []);
+      );
+  };
 
-	const handleFormSubmit = async event => {
-		event.preventDefault();
-		const { value: email } = emailRef.current;
-		const { value: password } = passwordRef.current;
-        console.log(email, password);
-		axios.post(url, {
-            email, password
-        }).then(res => {
-            setCookie('jwt', res.data.token);
-            window.location.assign('/');
-        }, err => {
-            console.error(err);
-            alert('eroare!!!');
-        })
-	};
+  return (
+    <div className="Register Login">
+      <form onSubmit={handleFormSubmit}>
+        <div className="left">
+          <h2>Intră în cont</h2>
+          <p>Pentru a te conecta la contul tău te rugăm să completezi acest formular..</p>
+          <p>
+            Dacă nu ai cont, te rugăm să te înregistrezi <a href="/inregistrare">aici</a>!
+          </p>
 
-	return (
-		<div>
-			<form onSubmit={handleFormSubmit}>
-				<label for="email">
-					<b>Email</b>
-				</label>
-				<input
-					ref={emailRef}
-					type="email"
-					placeholder="Enter email"
-					name="email"
-					required
-				/>
-				<br />
-				<label for="psw">
-					<b>Password</b>
-				</label>
-				<input
-					ref={passwordRef}
-					type="password"
-					placeholder="Enter Password"
-					name="psw"
-					required
-				/>
-				<br />
-				<button type="submit">Login</button>
-			</form>
-		</div>
-	);
+          <img src={studentImg} alt="Elev" />
+        </div>
+        <div className="right">
+          <input ref={emailRef} type="email" placeholder="Enter email" name="email" />
+
+          <input ref={passwordRef} type="password" placeholder="Enter Password" name="psw" />
+
+          <button type="submit">Trimite</button>
+          <span
+            className="error"
+            style={{ marginTop: '2em', color: error === 'x' ? '#706fd3' : 'rgb(184, 44, 44)' }}
+          >
+            {error}
+          </span>
+        </div>
+      </form>
+    </div>
+  );
 }
