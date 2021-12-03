@@ -10,10 +10,6 @@ const TestSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    materie_id: {
-        type: Number,
-        required: true
-    },
     intrebari: [{
         nume:{
             type: String,

@@ -1,7 +1,6 @@
 const User = require("../../models/user")
 const jwtDecoder = require("jwt-decode");
 const bcrypt = require("bcrypt");
-
 const getUserByIdFromToken = async(token) =>{
     try {
         const id = jwtDecoder(token).id

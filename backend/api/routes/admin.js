@@ -9,5 +9,7 @@ const router = Router()
 
 router.get("/users",controller.getAllUsers)
 
+router.post("/quiz", controller.createQuiz)
+router.post("/sub_bac", controller.createSubBac)
 
 module.exports = router
