@@ -1,11 +1,22 @@
 .Nav {
   height: 100vh;
   background: var(--purple);
-  width: 15%;
+  width: 17%;
+}
+
+.Nav h1 {
+  text-align: center;
+  margin-top: 1em;
+  color: #fff;
+}
+
+.Nav h1 span {
+  color: var(--blue);
+  font-size: 30px;
 }
 
 .Nav .top {
-  padding: 2em;
+  padding: 4em 2em 2em 2em;
 }
 
 .Nav .top {
@@ -40,7 +51,7 @@
 }
 
 .Nav a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .Nav .link-container {
