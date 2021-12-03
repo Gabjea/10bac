@@ -3,8 +3,10 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 
+
 require("dotenv").config();
 
+const db = require('./database')
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
