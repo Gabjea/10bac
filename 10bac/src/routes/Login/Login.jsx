@@ -33,8 +33,8 @@ export default function Login() {
 	return (
 		<div>
 			<form onSubmit={handleFormSubmit}>
-				<label for="uname">
-					<b>Username</b>
+				<label for="email">
+					<b>Email</b>
 				</label>
 				<input
 					ref={emailRef}
