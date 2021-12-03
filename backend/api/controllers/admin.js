@@ -62,11 +62,21 @@ const getAllQuizes = (req,res ) => {
 
 }
 
+const deleteQuiz = (req,res) => {
+  const {id} = req.body
+  Quiz.findOneAndDelete({_id:id},(err,result)=> {
+    if (err) res.send(500).json({err: err})
+    res.status(200).json({message: "Testul grila a fost sters cu succes!"})
+  })
+  
+}
+
 module.exports = {
     getAllUsers,
     createQuiz,
     updateQuiz,
     getAllQuizes,
+    deleteQuiz,
     createSubBac,
-    updateSubBac
+    updateSubBac,
 }
