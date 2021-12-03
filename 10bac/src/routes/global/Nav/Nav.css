@@ -39,6 +39,10 @@
   transition: var(--transition-time);
 }
 
+.Nav a {
+    text-decoration: none;
+}
+
 .Nav .link-container {
   width: 50%;
   margin: 0 auto;
