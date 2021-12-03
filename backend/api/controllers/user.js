@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const passport = require("../../auth/passport");
 const functions = require("../functions");
 
+
 const loginController = async (req, res) => {
   const { email, password } = req.body;
 
@@ -22,16 +23,13 @@ const loginController = async (req, res) => {
       return res
         .status(406)
         .json({ error: "Email-ul sau parola sunt incorecte!" });
-    const jwtToken = jwt.sign(
-      { id: userWithEmail._id, email: userWithEmail.email },
-      process.env.JWT_SECRET,
-      {}
-    );
 
+    const jwtToken = functions.createAuthToken(userWithEmail._id)
     res.json({
       message: "Te-ai autentificat cu succes!",
       token: "Bearer " + jwtToken,
     });
+
   });
 };
 
@@ -52,7 +50,7 @@ const registerController = async (req, res) => {
       _id: new mongoose.Types.ObjectId(),
       name,
       surname,
-      profile_pic:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      profile_pic: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       email,
       password: hashedPassword,
       role: "user",
@@ -62,7 +60,13 @@ const registerController = async (req, res) => {
       res.status(500).json({ error: "Inregistrarea a esuat!" });
     });
 
-    if (savedUser) res.json({ message: "Te-ai inregistrat cu succes" });
+    if (savedUser) {
+      const jwtToken = functions.createAuthToken(savedUser._id)
+      res.json({ 
+        message: "Te-ai inregistrat cu succes",
+        token: "Bearer " + jwtToken,
+    });
+    }
   });
 };
 
@@ -71,9 +75,17 @@ const getUserProfileController = async (req, res) => {
   res.send(await functions.getUserByIdFromToken(token));
 };
 
-const updateUserProfileController = async(req,res) => {
-  const token = req.headers.authorization.split(" ")[1]
-  res.send(await functions.updateUserProfile(token,req.body));
+const updateUserProfileController = async (req, res) => {
+  try{
+    const token = req.headers.authorization.split(" ")[1]
+    await functions.updateUserProfile(token, req.body)
+    res.status(200).json({ message: "Ti-ai actualizat profilul cu succes!" });
+
+  }catch{
+    res
+      .status(406)
+      .json({ error: "Actualizare nereusita!" });
+  }
 }
 
 
