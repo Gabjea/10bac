@@ -2,7 +2,8 @@ const User = require("../../models/user");
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const passport = require('../../auth/passport');
+const passport = require("../../auth/passport");
+const functions = require("../functions");
 
 const loginController = async (req, res) => {
   const { email, password } = req.body;
@@ -16,8 +17,6 @@ const loginController = async (req, res) => {
       .status(400)
       .json({ message: "Email-ul sau parola sunt incorecte!" });
 
-  
-
   bcrypt.compare(password, userWithEmail.password, function (err, result) {
     if (err || !result)
       return res
@@ -28,14 +27,16 @@ const loginController = async (req, res) => {
       process.env.JWT_SECRET,
       {}
     );
-    res
-      .cookie("Bearer " + jwtToken)
-      .json({ message: "Ai fost authetificat cu succes" });
+
+    res.json({
+      message: "Te-ai autentificat cu succes!",
+      token: "Bearer " + jwtToken,
+    });
   });
 };
 
 const registerController = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { name, surname, email, password } = req.body;
   const alreadyExistsUser = await User.findOne({ email: email })
     .exec()
     .catch((err) => {
@@ -49,7 +50,9 @@ const registerController = async (req, res) => {
   bcrypt.hash(password, passwordSalt, async function (err, hashedPassword) {
     const newUser = new User({
       _id: new mongoose.Types.ObjectId(),
-      username,
+      name,
+      surname,
+      profile_pic:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       email,
       password: hashedPassword,
       role: "user",
@@ -63,7 +66,20 @@ const registerController = async (req, res) => {
   });
 };
 
+const getUserProfileController = async (req, res) => {
+  const token = req.headers.authorization.split(" ")[1]
+  res.send(await functions.getUserByIdFromToken(token));
+};
+
+const updateUserProfileController = async(req,res) => {
+  const token = req.headers.authorization.split(" ")[1]
+  res.send(await functions.updateUserProfile(token,req.body));
+}
+
+
 module.exports = {
   loginController,
   registerController,
+  getUserProfileController,
+  updateUserProfileController
 };

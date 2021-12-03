@@ -2,7 +2,15 @@ const mongoose = require('../database/index')
 
 const UserSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
-    username: {
+    name: {
+        type: String,
+        required: true
+    },
+    surname: {
+        type: String,
+        required: true
+    },
+    profile_pic: {
         type: String,
         required: true
     },
