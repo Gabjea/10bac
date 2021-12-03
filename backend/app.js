@@ -6,7 +6,6 @@ const cors = require("cors");
 
 require("dotenv").config();
 
-const db = require('./database')
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -21,5 +20,9 @@ app.get("/", (req, res) => {
       message: "👋🌎 Team",
     });
   });
+
+
+app.use(middlewares.notFound);
+app.use(middlewares.errorHandler);
 
 module.exports = app;
