@@ -9,5 +9,7 @@ const router = Router()
 router.post("/login",controller.loginController)
 router.post("/register",controller.registerController)
 
+// User Commands
+router.get("/profile",middlewares.Auth,controller.getUserProfileController)
 
 module.exports = router

@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
-
+const cookieParser = require("cookie-parser")
 
 require("dotenv").config();
 
@@ -10,6 +10,7 @@ const app = express();
 const middlewares = require("./middlewares");
 const api = require('./api')
 
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
