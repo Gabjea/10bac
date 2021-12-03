@@ -1,99 +1,106 @@
-.Root .description {
+.Lessons .description {
   line-height: 1.7;
   font-size: var(--small-font);
   margin-bottom: 2em;
 }
 
-.Root .description span {
+.Lessons .description span {
   color: var(--blue);
   font-weight: 700;
 }
 
-.Root .table {
+.Lessons .table {
   width: 80%;
   margin: 0 auto;
   /* background: green; */
 }
 
-.Root .top {
+.Lessons .top {
   width: 80%;
   margin: 0 auto;
 }
 
-.Root .table .row,
-.Root .table .top-row {
+.Lessons .table .row,
+.Lessons .table .top-row {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: 0.3em;
+  padding-left: 0;
 }
 
-.Root .table .top-row {
+.Lessons .table .top-row {
   background: var(--purple);
   border-radius: 6px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   padding: 0.7em;
+  padding-left: 0;
 }
 
-.Root .table .top-row {
+.Lessons .table .top-row {
   height: 4em;
   align-items: center;
 }
 
-.Root .table .row {
+.Lessons .table .row {
   height: 3em;
   align-items: center;
   color: #000;
 }
 
-.Root .table .row.last {
+.Lessons .table .row.last {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.Root .table .row .icon {
+.Lessons .table .row .icon {
   margin-right: 0.6em;
   color: var(--purple);
 }
 
-.Root .table .top-row p {
+.Lessons .table .top-row p {
   font-weight: 700;
   color: #fff;
 }
 
-.Root .table .row p,
-.Root .table .top-row p {
-  text-align: center;
-  width: 33%;
-}
-
-.Root .table .row p.left,
-.Root .table .top-row p.left {
-  text-align: left;
+.Lessons .table .row p,
+.Lessons .table .top-row p {
+  /* text-align: center; */
+  width: 100%;
   margin-left: 3em;
 }
 
-.Root .table .row p.right,
-.Root .table .top-row p.right {
+/* .Lessons .table .row p.right,
+.Lessons .table .top-row p.right {
   text-align: right;
   margin-right: 3em;
-}
+} */
 
-.Root .row {
+.Lessons .row {
   background: var(--dark-pink);
   cursor: pointer;
 }
 
-.Root .row.even {
+.Lessons .row.even {
   background: var(--light-pink);
 }
 
-.Root .row:hover {
+.Lessons .row:hover {
   background: var(--blue);
   transition: var(--transition-time);
 }
 
-.Root .row:hover > p {
+.Lessons .row:hover > p {
   color: #fff;
+}
+
+.Lessons .left span {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.Lessons .top span {
+  font-size: var(--large-font);
+  color: var(--blue);
 }
