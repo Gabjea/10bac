@@ -1,0 +1,93 @@
+.Root .description {
+  line-height: 1.7;
+  font-size: var(--small-font);
+  margin-bottom: 2em;
+}
+
+.Root .description span {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.Root .table {
+  width: 80%;
+  /* background: green; */
+}
+
+.Root .table .row,
+.Root .table .top-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.3em;
+}
+
+.Root .table .top-row {
+  background: var(--purple);
+  border-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0.7em;
+}
+
+.Root .table .top-row {
+  height: 4em;
+  align-items: center;
+}
+
+.Root .table .row {
+  height: 3em;
+  align-items: center;
+  color: #000;
+}
+
+.Root .table .row.last {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.Root .table .row .icon {
+  margin-right: 0.6em;
+  color: var(--purple);
+}
+
+.Root .table .top-row p {
+  font-weight: 700;
+  color: #fff;
+}
+
+.Root .table .row p,
+.Root .table .top-row p {
+  text-align: center;
+  width: 33%;
+}
+
+.Root .table .row p.left,
+.Root .table .top-row p.left {
+  text-align: left;
+  margin-left: 3em;
+}
+
+.Root .table .row p.right,
+.Root .table .top-row p.right {
+  text-align: right;
+  margin-right: 3em;
+}
+
+.Root .row {
+  background: var(--dark-pink);
+  cursor: pointer;
+}
+
+.Root .row.even {
+  background: var(--light-pink);
+}
+
+.Root .row:hover {
+  background: var(--blue);
+  transition: var(--transition-time);
+}
+
+.Root .row:hover > p {
+  color: #fff;
+}
