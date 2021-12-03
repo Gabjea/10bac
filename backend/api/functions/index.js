@@ -1,6 +1,19 @@
 const User = require("../../models/user")
 const jwtDecoder = require("jwt-decode");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+
+const createAuthToken = (id,email) => {
+    
+    return jwt.sign(
+        { id: id, email:email },
+        process.env.JWT_SECRET,
+        {}
+      );
+}
+
+
 const getUserByIdFromToken = async(token) =>{
     try {
         const id = jwtDecoder(token).id
@@ -50,5 +63,6 @@ const updateUserProfile = async(token,body) =>{
 
 module.exports = {
     getUserByIdFromToken,
-    updateUserProfile
+    updateUserProfile,
+    createAuthToken
 }

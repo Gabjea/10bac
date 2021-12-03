@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const passport = require("../../auth/passport");
 const functions = require("../functions");
 
+
 const loginController = async (req, res) => {
   const { email, password } = req.body;
 
@@ -23,12 +24,7 @@ const loginController = async (req, res) => {
         .status(406)
         .json({ error: "Email-ul sau parola sunt incorecte!" });
 
-    const jwtToken = jwt.sign(
-      { id: userWithEmail._id, email: userWithEmail.email },
-      process.env.JWT_SECRET,
-      {}
-    );
-
+    const jwtToken = functions.createAuthToken(userWithEmail._id,userWithEmail.email)
     res.json({
       message: "Te-ai autentificat cu succes!",
       token: "Bearer " + jwtToken,
@@ -64,7 +60,13 @@ const registerController = async (req, res) => {
       res.status(500).json({ error: "Inregistrarea a esuat!" });
     });
 
-    if (savedUser) res.json({ message: "Te-ai inregistrat cu succes" });
+    if (savedUser) {
+      const jwtToken = functions.createAuthToken(savedUser._id,savedUser.email)
+      res.json({ 
+        message: "Te-ai inregistrat cu succes",
+        token: "Bearer " + jwtToken,
+    });
+    }
   });
 };
 
