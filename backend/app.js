@@ -7,6 +7,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+const middlewares = require("./middlewares");
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -14,6 +16,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(cors());
+
 
 app.get("/", (req, res) => {
     res.json({
