@@ -1,13 +1,14 @@
 const User = require("../../models/user")
+const Quiz = require("../../models/quiz");
 const jwtDecoder = require("jwt-decode");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 
-const createAuthToken = (id,email) => {
+const createAuthToken = (id) => {
     
     return jwt.sign(
-        { id: id, email:email },
+        { id: id},
         process.env.JWT_SECRET,
         {}
       );
@@ -58,11 +59,26 @@ const updateUserProfile = async(token,body) =>{
     }
 }
 
+const updateQuiz = async(body) => {
+    const {id,materie_id,capitol_id,intrebari} = body
 
+    return await Quiz.findOneAndUpdate({_id: id},{
+        materie_id,
+        capitol_id,
+        intrebari
+    },{
+        returnOriginal: false
+    }).catch(
+        (err) => {
+        console.log("Error: ", err);
+        }
+    );
+}
 
 
 module.exports = {
     getUserByIdFromToken,
     updateUserProfile,
+    updateQuiz,
     createAuthToken
 }

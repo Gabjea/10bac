@@ -1,6 +1,6 @@
 const mongoose = require('../database/index')
 
-const TestSchema = mongoose.Schema({
+const QuizSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
     materie_id: {
         type: Number,
@@ -30,4 +30,4 @@ const TestSchema = mongoose.Schema({
     }]
 })
 
-module.exports = mongoose.model('Test', TestSchema)
+module.exports = mongoose.model('Quiz', QuizSchema)

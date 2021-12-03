@@ -24,7 +24,7 @@ const loginController = async (req, res) => {
         .status(406)
         .json({ error: "Email-ul sau parola sunt incorecte!" });
 
-    const jwtToken = functions.createAuthToken(userWithEmail._id,userWithEmail.email)
+    const jwtToken = functions.createAuthToken(userWithEmail._id)
     res.json({
       message: "Te-ai autentificat cu succes!",
       token: "Bearer " + jwtToken,
@@ -61,7 +61,7 @@ const registerController = async (req, res) => {
     });
 
     if (savedUser) {
-      const jwtToken = functions.createAuthToken(savedUser._id,savedUser.email)
+      const jwtToken = functions.createAuthToken(savedUser._id)
       res.json({ 
         message: "Te-ai inregistrat cu succes",
         token: "Bearer " + jwtToken,
