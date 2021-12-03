@@ -3,8 +3,9 @@ import './Login.css';
 import axios from 'axios';
 import { isLoggedIn, setCookie } from '../../utils';
 import studentImg from './../../assets/student.png';
+import globalVars from '../../globalVars';
 
-const url = 'http://79.113.201.115:5000/api/v1/user/login';
+const url = globalVars.apiPrefix + '/user/login';
 
 export default function Login() {
   const [error, setError] = useState('x');
