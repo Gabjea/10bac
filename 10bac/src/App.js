@@ -1,21 +1,23 @@
 import "./App.css";
 import Nav from "./../src/routes/global/Nav/Nav";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Root from "./routes/Root/Root";
+import Register from "./routes/Register/Register";
+import Login from "./routes/Login/Login";
 
-function App() {
+export default function App() {
 	return (
 		<div className="App">
-            <Nav />
-				<Routes>
-					<Route exact path="/" element={<Root />} />
-                    <Route exact path="/subiecte" element={<Root />} />
-                    <Route exact path="/materii" element={<Root />} />
-					<Route exact path="/profil" element={<Root />} />
-                    <Route exact path="/istoric" element={<Root />} />
-				</Routes>
+			<Nav />
+			<Routes>
+				<Route exact path="/" element={<Root />} />
+				<Route path="/subiecte" element={<Root />} />
+				<Route path="/materii" element={<Root />} />
+				<Route path="/profil" element={<Root />} />
+				<Route path="/istoric" element={<Root />} />
+				<Route path="/inregistrare" element={<Register />} />
+				<Route path="/autentificare" element={<Login />} />
+			</Routes>
 		</div>
 	);
 }
-
-export default App;
