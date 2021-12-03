@@ -1,0 +1,65 @@
+.Nav {
+  height: 100vh;
+  background: var(--purple);
+  width: 15%;
+}
+
+.Nav .top {
+  padding: 2em;
+}
+
+.Nav .top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+}
+
+.Nav .profile-picture {
+  height: 7em;
+  border-radius: 50%;
+}
+
+.Nav .name {
+  display: block;
+  color: #fff;
+  margin-top: 0.5em;
+  font-weight: 700;
+  font-size: var(--medium-font);
+}
+
+.Nav .link {
+  font-size: var(--medium-font);
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+.Nav .link-container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0 2em 0;
+}
+
+.Nav .icon-container {
+  width: 3em;
+}
+
+.Nav .icon {
+  color: #fff;
+  font-size: 22px;
+}
+
+.Nav .link:hover {
+  background: var(--blue);
+}
+
+.Nav .link .link-name {
+  margin-left: 1.2em;
+}
