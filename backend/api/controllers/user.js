@@ -93,20 +93,19 @@ const uploadProfilePictureController = async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1]
     const user = await functions.getUserByIdFromToken(token)
+    const path ='/uploads/icons/' + user._id + ".png"
+    const file = await functions.uploadFile(req.files,path,'png')
 
-    if (!req.files) {
+    if (!file)
       res.send({
         status: false,
         message: 'Nicio poza nu a fost incarcata!'
       });
-    } else {
+      else {
+        await functions.updateUserProfile(token, { profile_pic: process.env.HOST + path })
+        res.status(200).json({ message: "Ti-ai actualizat poza de profil cu succes!" })
+      }
 
-      let file = req.files.file;
-      const path = '/uploads/icons/' + user._id + ".png"
-      file.mv('.' + path);
-      await functions.updateUserProfile(token, { profile_pic: process.env.HOST + path })
-      res.status(200).json({ message: "Ti-ai actualizat poza de profil cu succes!" })
-    }
   } catch (err) {
     console.log(err)
     res.status(500).send(err);
@@ -118,11 +117,17 @@ const getUploadedIcon = (req, res) => {
   res.sendFile(req.params.img, { root: './uploads/icons' })
 }
 
+const getUploadedSubBac = (req, res) => {
+
+  res.sendFile(req.params.img, { root: './uploads/subs_bac' })
+}
+
 module.exports = {
   loginController,
   registerController,
   getUserProfileController,
   updateUserProfileController,
   uploadProfilePictureController,
-  getUploadedIcon
+  getUploadedIcon,
+  getUploadedSubBac
 };

@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
   });
 
 app.get("/uploads/icons/:img", controller.getUploadedIcon)
+app.get("/uploads/subs_bac/:img", controller.getUploadedSubBac)
 app.use("/api/v1", api);
 
 app.use(middlewares.notFound);
