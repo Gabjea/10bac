@@ -122,6 +122,16 @@ const getUploadedSubBac = (req, res) => {
   res.sendFile(req.params.img, { root: './uploads/subs_bac' })
 }
 
+const getUserProfileFromIdController = async(req,res) => {
+  const id = req.params.id
+  res.send(await User.findById(id).catch(
+    (err) => {
+      console.log("Error: ", err);
+    }
+  ))
+}
+
+
 module.exports = {
   loginController,
   registerController,
@@ -129,5 +139,6 @@ module.exports = {
   updateUserProfileController,
   uploadProfilePictureController,
   getUploadedIcon,
-  getUploadedSubBac
+  getUploadedSubBac,
+  getUserProfileFromIdController
 };

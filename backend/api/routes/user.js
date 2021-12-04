@@ -11,6 +11,7 @@ router.post("/register",controller.registerController)
 
 // User Profile
 router.get("/profile",middlewares.Auth,controller.getUserProfileController)
+router.get("/profile/:id",middlewares.Auth,controller.getUserProfileFromIdController)
 router.post("/profile/picture",middlewares.Auth,controller.uploadProfilePictureController)
 router.patch("/profile",middlewares.Auth,controller.updateUserProfileController)
 

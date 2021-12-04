@@ -10,19 +10,40 @@ const CommentSchema = mongoose.Schema({
         type: String,
         required:true
     },
-    owner_id: {
+    owner: {
+      _id: {
         type: String,
         required: true
+      },
+      username: {
+        type: String,
+        required: false
+      },
+      profile_pic: {
+        type: String,
+        required: false
+      }
     },
     raspunsuri: [{
+        _id: mongoose.Types.ObjectId,
         title:{
             type: String,
             required: true
         },
-        owner_id: {
-            type: String,
-            required: true
-        }
+        owner:{
+            _id: {
+              type: String,
+              required: true
+            },
+            username: {
+                type: String,
+                required: false
+              },
+            profile_pic: {
+              type: String,
+              required: true
+            }
+          }
     }],
   
 })
