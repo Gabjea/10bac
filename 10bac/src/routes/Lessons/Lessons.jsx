@@ -12,7 +12,7 @@ const Lessons = props => {
   }, []);
 
   const lessonsMath = [
-    ['Definitie', 'Operatii'], // Vectori
+    ['Definitie', 'Operatii', 'Test de evaluare vectori'], // Vectori
     ['Notiuni'] // Functii
   ];
 
