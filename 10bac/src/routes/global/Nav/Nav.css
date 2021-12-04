@@ -81,7 +81,7 @@
 }
 
 .Nav {
-  transition: 0.5s;
+  transition: 0.3s;
   transform: translateY();
   z-index: 1;
   height: 100vh;
@@ -95,11 +95,18 @@
   }
 
   .Nav.closed {
+    /* visibility: hidden; */
     display: none;
   }
   * {
     overflow-y: auto;
     overflow-x: auto;
+  }
+
+  span,
+  p {
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .content {
@@ -114,6 +121,7 @@
   .content {
     overflow: hidden;
     height: 130vh;
+    margin-top: 4em;
   }
 }
 
@@ -123,18 +131,20 @@
   align-items: center;
   background: var(--purple);
   z-index: 2;
-  /* position: fixed; */
+  position: fixed;
+  width: 100%;
 }
 
 .App .header h1 {
   margin-left: 1em;
   color: #fff;
+  font-size: 20px;
 }
 
 .App .hamburger {
   display: block;
   color: var(--blue);
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
 }
 

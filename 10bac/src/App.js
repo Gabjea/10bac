@@ -15,6 +15,7 @@ import EseuPlumb from './routes/Lessons/Pages/EseuPlumb';
 import VectorDef from './routes/Lessons/Pages/VectorDef';
 import VectorOp from './routes/Lessons/Pages/VectorOp';
 import FunctiiDef from './routes/Lessons/Pages/FunctiiDef';
+import Tests from './routes/Tests/Tests';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -40,7 +41,7 @@ const App = () => {
           <Route path="/materii" element={<Root />} />
           <Route path="/lectii/:id_materie/:id_capitol" element={<Lessons />} />
           <Route path="/materie/:id" element={<Subject />} />
-          <Route path="/subiecte" element={<Root />} />
+          <Route path="/subiecte" element={<Tests />} />
           <Route path="/istoric" element={<Root />} />
           <Route path="/inregistrare" element={<Register />} />
           <Route path="/autentificare" element={<Login />} />
