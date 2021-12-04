@@ -40,13 +40,6 @@ app.get("/", (req, res) => {
 app.get("/uploads/icons/:img", controller.getUploadedIcon)
 app.use("/api/v1", api);
 
-// app.use(function(req, res, next) {
-//   res.header('Access-Control-Allow-Origin', yourExactHostname);
-//   res.header('Access-Control-Allow-Credentials', true);
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-//   next();
-// });
-
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
