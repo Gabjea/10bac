@@ -1,9 +1,12 @@
 const User = require("../../models/user");
+const Quiz = require("../../models/quiz");
+const Nota = require("../../models/nota");
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const passport = require("../../auth/passport");
 const functions = require("../functions");
+const jwtDecoder = require("jwt-decode");
 
 
 const loginController = async (req, res) => {
@@ -132,6 +135,59 @@ const getUserProfileFromIdController = async(req,res) => {
 }
 
 
+const getAllQuizes = (req,res ) => {
+  Quiz.find({}, (err,quizes) =>{
+    if (err) res.send(err)
+    else res.send(quizes)
+  })
+
+}
+
+const submitQuiz = (req,res) =>{
+  const quiz_id = req.params.quiz_id
+  const {answers} = req.body
+  let points= 1
+  const token = req.headers.authorization.split(' ')[1]
+  const user_id = jwtDecoder(token).id
+  Quiz.findById(quiz_id, async (err, findedQuiz) => {
+    if (err) return res.send(err)
+    for (let index = 0; index < findedQuiz.intrebari.length; index++) {
+      const intrebare = findedQuiz.intrebari[index];
+
+      
+      if(intrebare.raspuns_corect === answers[index].answer)
+        points++
+    }
+    const newNota = new Nota({
+      _id: new mongoose.Types.ObjectId(),
+      owner_id:user_id,
+      test_id:quiz_id,
+      nota: points,
+      date: new Date()
+      
+    });
+    
+    const savedNota = await newNota.save().catch((err) => {
+      console.log("Error: ", err);
+      res.status(500).json({ error: "Incarcarea a esuat!" });
+    });
+
+    if(savedNota)
+      res.status(200).json({message: `Ai luat nota ${points}`})
+  })
+  
+}
+
+const getAllNote = (req,res) =>{
+  const token = req.headers.authorization.split(' ')[1]
+  const user_id = jwtDecoder(token).id
+  Nota.find({owner_id:user_id}, (err,quizes) =>{
+    if (err) res.send(err)
+    else res.send(quizes)
+  })
+} 
+
+
 module.exports = {
   loginController,
   registerController,
@@ -140,5 +196,8 @@ module.exports = {
   uploadProfilePictureController,
   getUploadedIcon,
   getUploadedSubBac,
-  getUserProfileFromIdController
+  getUserProfileFromIdController,
+  getAllQuizes,
+  submitQuiz,
+  getAllNote
 };

@@ -2,6 +2,10 @@ const mongoose = require('../database/index')
 
 const QuizSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
+    name: {
+        type: String,
+        required: true
+    },
     materie_id: {
         type: Number,
         required: true
