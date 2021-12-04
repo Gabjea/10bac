@@ -1,5 +1,6 @@
 const User = require("../../models/user");
 const Quiz = require("../../models/quiz");
+const SubBac = require("../../models/sub_bac");
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -71,6 +72,21 @@ const deleteQuiz = (req,res) => {
   
 }
 
+const getAllSubBac = (req,res) => {
+  SubBac.find({}, (err,users) =>{
+    if (err) res.send(err)
+    else res.send(users)
+  })
+}
+
+const deleteSubBac = (req, res) => {
+  const {id} = req.body
+  SubBac.findOneAndDelete({_id:id},(err,result)=> {
+    if (err) res.send(500).json({err: err})
+    res.status(200).json({message: "Subiectul a fost sters cu succes!"})
+  })
+}
+
 module.exports = {
     getAllUsers,
     createQuiz,
@@ -78,5 +94,6 @@ module.exports = {
     getAllQuizes,
     deleteQuiz,
     createSubBac,
-    updateSubBac,
+    getAllSubBac,
+    deleteSubBac
 }

@@ -62,10 +62,10 @@ const registerController = async (req, res) => {
 
     if (savedUser) {
       const jwtToken = functions.createAuthToken(savedUser._id)
-      res.json({ 
+      res.json({
         message: "Te-ai inregistrat cu succes",
         token: "Bearer " + jwtToken,
-    });
+      });
     }
   });
 };
@@ -76,22 +76,53 @@ const getUserProfileController = async (req, res) => {
 };
 
 const updateUserProfileController = async (req, res) => {
-  try{
+  try {
     const token = req.headers.authorization.split(" ")[1]
     await functions.updateUserProfile(token, req.body)
     res.status(200).json({ message: "Ti-ai actualizat profilul cu succes!" });
 
-  }catch{
+  } catch {
     res
       .status(406)
       .json({ error: "Actualizare nereusita!" });
   }
 }
 
+const uploadProfilePictureController = async (req, res) => {
+
+  try {
+    const token = req.headers.authorization.split(' ')[1]
+    const user = await functions.getUserByIdFromToken(token)
+
+    if (!req.files) {
+      res.send({
+        status: false,
+        message: 'Nicio poza nu a fost incarcata!'
+      });
+    } else {
+
+      let file = req.files.file;
+      const path = '/uploads/icons/' + user._id + ".png"
+      file.mv('.' + path);
+      await functions.updateUserProfile(token, { profile_pic: process.env.HOST + path })
+      res.status(200).json({ message: "Ti-ai actualizat poza de profil cu succes!" })
+    }
+  } catch (err) {
+    console.log(err)
+    res.status(500).send(err);
+  }
+}
+
+const getUploadedIcon = (req, res) => {
+
+  res.sendFile(req.params.img, { root: './uploads/icons' })
+}
 
 module.exports = {
   loginController,
   registerController,
   getUserProfileController,
-  updateUserProfileController
+  updateUserProfileController,
+  uploadProfilePictureController,
+  getUploadedIcon
 };
