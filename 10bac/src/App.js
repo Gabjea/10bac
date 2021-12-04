@@ -21,6 +21,7 @@ import Quiz from './routes/Lessons/Pages/Quiz/Quiz';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import History from './routes/History/History';
 
 const App = () => {
   const [navbarOpened, setNavbarOpened] = useState(true);
@@ -43,7 +44,7 @@ const App = () => {
           <Route path="/lectii/:id_materie/:id_capitol" element={<Lessons />} />
           <Route path="/materie/:id" element={<Subject />} />
           <Route path="/subiecte" element={<Tests />} />
-          <Route path="/istoric" element={<Root />} />
+          <Route path="/istoric" element={<History />} />
           <Route path="/inregistrare" element={<Register />} />
           <Route path="/autentificare" element={<Login />} />
           <Route path="/profil" element={<Profile />} />
