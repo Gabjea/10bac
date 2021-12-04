@@ -1,6 +1,8 @@
 const User = require("../../models/user");
 const Quiz = require("../../models/quiz");
 const Nota = require("../../models/nota");
+const SubBac = require("../../models/sub_bac");
+const UploadSubBac = require("../../models/upload_bac");
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -121,8 +123,7 @@ const getUploadedIcon = (req, res) => {
 }
 
 const getUploadedSubBac = (req, res) => {
-
-  res.sendFile(req.params.img, { root: './uploads/subs_bac' })
+  res.sendFile(req.params.img, { root: './uploads/sub_bac' })
 }
 
 const getUserProfileFromIdController = async(req,res) => {
@@ -163,6 +164,7 @@ const submitQuiz = (req,res) =>{
       owner_id:user_id,
       test_id:quiz_id,
       nota: points,
+      test_title: findedQuiz.name,
       date: new Date()
       
     });
@@ -187,6 +189,56 @@ const getAllNote = (req,res) =>{
   })
 } 
 
+const getAllSubBac = (req,res) => {
+  SubBac.find({}, (err,users) =>{
+    if (err) res.send(err)
+    else res.send(users)
+  })
+}
+
+const submitSubBac = async(req,res) => {
+
+  try {
+    const sub_bac_id = req.params.id
+    const token = req.headers.authorization.split(' ')[1]
+    const user = await functions.getUserByIdFromToken(token)
+    const path ='/uploads/sub_bac/' + sub_bac_id+user._id + ".jpg"
+    const file = await functions.uploadFile(req.files,path,'jpg')
+
+    if (!file)
+      res.send({
+        status: false,
+        message: 'Nicio poza nu a fost incarcata!'
+      });
+      else {
+        const sub_bac = await SubBac.findById(sub_bac_id)
+        console.log(sub_bac)
+        const newUploadSubBac = new UploadSubBac({
+          _id: new mongoose.Types.ObjectId(),
+          status: "pending",
+          sub_bac_id,
+          sub_bac_link: sub_bac.link,
+          owner_id: user._id,
+          link: process.env.HOST + path
+        });
+        
+        const savedUploadSubBac = await newUploadSubBac.save().catch((err) => {
+          console.log("Error: ", err);
+          res.status(500).json({ error: "Incarcarea a esuat!" });
+        });
+    
+        if(savedUploadSubBac)
+          res.status(200).json({message: 'Ai incarcat subiectul cu succes'})
+      
+        
+      }
+
+  } catch (err) {
+    console.log(err)
+    res.status(500).send(err);
+  }
+
+}
 
 module.exports = {
   loginController,
@@ -199,5 +251,7 @@ module.exports = {
   getUserProfileFromIdController,
   getAllQuizes,
   submitQuiz,
-  getAllNote
+  getAllNote,
+  getAllSubBac,
+  submitSubBac
 };

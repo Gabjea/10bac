@@ -82,11 +82,7 @@ const uploadFile = async(files,path,extension) => {
         return null
       } else {
         switch (extension) {
-            case 'pdf':
-                files[''].mv('.' + path);
-                return true
-                
-        
+           
             case 'png':
                 let file = files.file;
                 file.mv('.' + path);
@@ -94,7 +90,8 @@ const uploadFile = async(files,path,extension) => {
                 
             
             default: 
-                return false
+                files[''].mv('.' + path);
+                return true
                 
         }
          

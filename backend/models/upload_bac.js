@@ -1,27 +1,27 @@
 const mongoose = require('../database/index')
 
-const NotaSchema = mongoose.Schema({
+const UploadBacSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
-    owner_id: {
+    status: {
         type: String,
         required: true
     },
-    test_id: {
+    sub_bac_id: {
         type: String,
         required: true
     },
-    test_title: {
+    sub_bac_link: {
         type: String,
         required: true
     },
-    nota: {
-        type: Number,
+    owner_id:{
+        type:String,
         required: true
     },
-    date:{
-        type: Date,
-        required:true
+    link: {
+        type: String,
+        required: true
     }
 })
 
-module.exports = mongoose.model('Nota',NotaSchema)
+module.exports = mongoose.model('UploadSubBac', UploadBacSchema)
