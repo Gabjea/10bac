@@ -48,18 +48,14 @@ const updateQuiz = async(req,res ) => {
 const createSubBac = async(req,res ) => {
   
   try {
-    const {materie_id, name} = req.body
+    const {materie_id, name, link} = req.body
     const newSubBac = new SubBac({
       
       _id: new mongoose.Types.ObjectId(),
-      materie_id:materie_id,
-      name: name
+      materie_id,
+      name,
+      link
     });
-
-    const path = '/uploads/subs_bac/' + newSubBac._id + ".pdf"
-    newSubBac.link = process.env.HOST + path
-    const file = await functions.uploadFile(req.files,path,'pdf')
-    if(file){
 
       const savedSubBac = await newSubBac.save().catch((err) => {
         console.log("Error: ", err);
@@ -67,18 +63,13 @@ const createSubBac = async(req,res ) => {
       });
     
       if (savedSubBac) res.json({ message: "Subiectul de bac a fost adaugat cu succes!" });
-    }
+    
 
-  } catch (error) {
-    res.status(500).json(error);
+  }catch (error){
+    res.status(500).send(error)
   }
-
 }
 
-const updateSubBac = (req,res ) => {
-  
-
-}
 
 const getAllQuizes = (req,res ) => {
   Quiz.find({}, (err,quizes) =>{
@@ -105,12 +96,19 @@ const getAllSubBac = (req,res) => {
 }
 
 const deleteSubBac = (req, res) => {
-  const {id} = req.body
+  const id = req.params.id
   SubBac.findOneAndDelete({_id:id},(err,result)=> {
     if (err) res.send(500).json({err: err})
     res.status(200).json({message: "Subiectul a fost sters cu succes!"})
   })
 }
+
+const getPendingSubsBac = (req, res) => {
+  const id = req.params.id
+
+}
+
+
 
 module.exports = {
     getAllUsers,
@@ -120,5 +118,6 @@ module.exports = {
     deleteQuiz,
     createSubBac,
     getAllSubBac,
-    deleteSubBac
+    deleteSubBac,
+    getPendingSubsBac
 }
