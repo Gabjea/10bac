@@ -2,7 +2,7 @@
   line-height: 1.7;
 }
 
-.Lesson .highlight {
+.highlight {
   color: var(--blue);
   font-size: inherit;
 }
