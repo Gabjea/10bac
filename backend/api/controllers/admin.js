@@ -45,8 +45,33 @@ const updateQuiz = async(req,res ) => {
 }
 
 
-const createSubBac = (req,res ) => {
+const createSubBac = async(req,res ) => {
   
+  try {
+    const {materie_id, name} = req.body
+    const newSubBac = new SubBac({
+      
+      _id: new mongoose.Types.ObjectId(),
+      materie_id:materie_id,
+      name: name
+    });
+
+    const path = '/uploads/subs_bac/' + newSubBac._id + ".pdf"
+    newSubBac.link = process.env.HOST + path
+    const file = await functions.uploadFile(req.files,path,'pdf')
+    if(file){
+
+      const savedSubBac = await newSubBac.save().catch((err) => {
+        console.log("Error: ", err);
+        res.status(500).json({ error: "Subiectul de bac nu a putut fi adaugat!" });
+      });
+    
+      if (savedSubBac) res.json({ message: "Subiectul de bac a fost adaugat cu succes!" });
+    }
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
 
 }
 

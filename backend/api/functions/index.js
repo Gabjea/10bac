@@ -75,10 +75,41 @@ const updateQuiz = async(body) => {
     );
 }
 
+const uploadFile = async(files,path,extension) => {
+    try{
+
+    if (!files) {
+        return null
+      } else {
+        switch (extension) {
+            case 'pdf':
+                files[''].mv('.' + path);
+                return true
+                
+        
+            case 'png':
+                let file = files.file;
+                file.mv('.' + path);
+                return true
+                
+            
+            default: 
+                return false
+                
+        }
+         
+      }
+    } catch (err) {
+      console.log(err)
+      return false;
+    }
+}
+
 
 module.exports = {
     getUserByIdFromToken,
     updateUserProfile,
     updateQuiz,
-    createAuthToken
+    createAuthToken,
+    uploadFile
 }
