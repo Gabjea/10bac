@@ -97,3 +97,35 @@
 .Root .row:hover > p {
   color: #fff;
 }
+
+@media (max-width: 765px) {
+  .Root .center {
+    display: none;
+  }
+
+  .Root .table {
+    width: 100%;
+  }
+
+  .Root .table .row,
+  .Root .table .top-row {
+    padding: 0.1em;
+  }
+
+  .Root .left {
+    margin-left: 0.7em !important;
+  }
+
+  .Root .right {
+    margin-right: 0.7em !important;
+  }
+
+  .Root .table .row p,
+  .Root .table .top-row p {
+    width: 50%;
+  }
+
+  .Root .top {
+    width: 100%;
+  }
+}

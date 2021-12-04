@@ -79,3 +79,38 @@
 .Profile .file-label:hover {
   border-bottom-color: var(--blue);
 }
+
+@media (max-width: 915px) {
+  .Profile {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .Profile .container {
+    width: auto;
+    flex-direction: column;
+    justify-content: space-b;
+    align-items: center;
+    padding: 2em;
+  }
+
+  .Profile .left,
+  .Profile .right {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Profile .right {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 540px) {
+  .Profile form input {
+    width: 200px;
+  }
+}

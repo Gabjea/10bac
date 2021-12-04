@@ -95,3 +95,38 @@
   font-weight: 700;
   user-select: none;
 }
+
+@media (max-width: 1005px) {
+  .Register .left {
+    text-align: center;
+  }
+
+  .Register form .left img {
+    margin-top: 1em;
+    height: 17em;
+  }
+
+  .Register form {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .Register .left,
+  .Register .right {
+    width: 100% !important;
+  }
+
+  .Register .right {
+    align-items: center;
+    margin-top: 2em;
+  }
+
+  .Register .right input {
+    margin-top: 2em;
+    width: 95%;
+  }
+
+  .Register .right button {
+    margin-top: 2em;
+  }
+}

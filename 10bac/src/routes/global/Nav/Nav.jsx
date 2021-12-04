@@ -5,7 +5,7 @@ import { faBookOpen, faFileAlt, faUser, faHistory } from '@fortawesome/free-soli
 import { Link } from 'react-router-dom';
 import { getUserDataFromJwtReq, isLoggedIn } from './../../../utils';
 
-const Nav = () => {
+const Nav = props => {
   const navLinks = [
     ['Materii', faBookOpen],
     ['Subiecte', faFileAlt],
@@ -21,9 +21,9 @@ const Nav = () => {
       .then(data => {
         const { profile_pic, name, surname } = data;
         setUserProfilePic(profile_pic);
-        console.log('====================================');
-        console.log(profile_pic);
-        console.log('====================================');
+        // console.log('====================================');
+        // console.log(profile_pic);
+        // console.log('====================================');
         setUserName(name + ' ' + surname);
       })
       .catch(err => {
@@ -33,7 +33,7 @@ const Nav = () => {
   }, []);
 
   return isLoggedIn() ? (
-    <div className="Nav">
+    <div className={`Nav ${props.opened ? 'open' : 'closed'}`}>
       <div className="top">
         <img src={userProfilePic} alt="profilePic" className="profile-picture" />
         <span className="name">{userName}</span>

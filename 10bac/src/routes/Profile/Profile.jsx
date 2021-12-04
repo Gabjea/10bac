@@ -115,6 +115,11 @@ export default function Profile() {
     console.log(event.target.files[0]);
   };
 
+  const logout = () => {
+    document.cookie = 'jwt=; Max-Age=0; path=/; domain=' + window.location.hostname;
+    window.location.reload();
+  };
+
   return (
     <div className="Profile">
       <div className="container">
@@ -159,6 +164,12 @@ export default function Profile() {
             <br />
             <br />
             <button type="submit">Trimite</button>
+
+            <br />
+            <br />
+            <p style={{ color: 'rgb(184, 44, 44)', cursor: 'pointer', fontWeight: '700' }} onClick={logout}>
+              Ieși din cont
+            </p>
           </form>
         </div>
       </div>

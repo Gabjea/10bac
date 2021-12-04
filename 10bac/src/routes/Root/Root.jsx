@@ -59,7 +59,7 @@ const Root = () => {
       <div className="table">
         <div className="top-row">
           <p className="left">Numele materiei</p>
-          <p>Capitole</p>
+          <p className="center">Capitole</p>
           <p className="right">Teste disponibile</p>
         </div>
 
@@ -71,7 +71,7 @@ const Root = () => {
                   <FontAwesomeIcon icon={subject[1]} size="1x" className="icon" />
                   {subject[0]}
                 </p>
-                <p>{subject[2]}</p>
+                <p className="center">{subject[2]}</p>
                 <p className="right">{subject[3]}</p>
               </div>
             </Link>
