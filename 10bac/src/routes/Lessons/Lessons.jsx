@@ -12,13 +12,13 @@ const Lessons = props => {
   }, []);
 
   const lessonsMath = [
-    ['Definiție', 'Operații'], // Vectori
-    ['Lecție1', 'Lecție2'] // Functii
+    ['Definitie', 'Operatii'], // Vectori
+    ['Lectie1', 'Lectie2'] // Functii
   ];
 
   const lessonsRomanian = [
-    ['Informații generale Moara cu noroc', 'Comentariu Moara cu noroc'], // Moara cu noroc
-    ['Informații generale Plumb', 'Comentariu Plumb'] // Plumb
+    ['Informatii generale Moara cu noroc', 'Comentariu Moara cu noroc'], // Moara cu noroc
+    ['Informatii generale Plumb', 'Comentariu Plumb'] // Plumb
   ];
 
   const chaptersMath = [
@@ -80,7 +80,7 @@ const Lessons = props => {
 
         {lessons[id - 1].map((lesson, index) => {
           return (
-            <Link to={`/lectie/${lesson.toLowerCase()}`}>
+            <Link to={`/lectie/${lesson.toLowerCase().replaceAll(' ', '-')}`}>
               <div className={`row ${index % 2 === 0 ? 'even' : ''}`}>
                 <p className="left">
                   <span>
