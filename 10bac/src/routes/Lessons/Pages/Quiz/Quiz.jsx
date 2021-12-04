@@ -20,9 +20,7 @@ const Quiz = () => {
 				(res) => {
 					setQuestions(res.data[0].intrebari);
 					setQuizId(res.data[0]._id);
-					console.log("====================================");
 					//console.log(res.data[0].intrebari);
-					console.log("====================================");
 				},
 				(err) => {
 					alert("error!");
@@ -45,6 +43,7 @@ const Quiz = () => {
 			}
 			userAnswers.answers.push({ answer: userAns });
 		}
+        console.log(userAnswers);
 		const url = `${globalVars.apiPrefix}/user/quiz/${quizID}`;
 		axios.post(url, userAnswers, {
 			headers: {
