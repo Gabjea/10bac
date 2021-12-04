@@ -17,6 +17,7 @@ import VectorOp from './routes/Lessons/Pages/VectorOp';
 import FunctiiDef from './routes/Lessons/Pages/FunctiiDef';
 import Tests from './routes/Tests/Tests';
 import Quiz from './routes/Lessons/Pages/Quiz/Quiz';
+import Quizes from './routes/Quizes/Quizes';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -55,7 +56,8 @@ const App = () => {
           <Route path="/lectie/definitie" element={<VectorDef />} />
           <Route path="/lectie/operatii" element={<VectorOp />} />
           <Route path="/lectie/notiuni" element={<FunctiiDef />} />
-          <Route path="/quiz/1" element={<Quiz />} />
+          <Route path="/quiz/:id" element={<Quiz />} />
+          <Route path="/teste" element={<Quizes />} />
         </Routes>
       </div>
     </div>

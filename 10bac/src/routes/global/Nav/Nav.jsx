@@ -1,7 +1,7 @@
 import React from 'react';
 import './Nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookOpen, faFileAlt, faUser, faHistory } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faFileAlt, faUser, faHistory, faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { getUserDataFromJwtReq, isLoggedIn } from './../../../utils';
 
@@ -9,6 +9,7 @@ const Nav = props => {
   const navLinks = [
     ['Materii', faBookOpen],
     ['Subiecte', faFileAlt],
+    ['Teste', faQuestion],
     ['Istoric', faHistory],
     ['Profil', faUser]
   ];

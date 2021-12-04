@@ -1,0 +1,106 @@
+.Quizes .description {
+  line-height: 1.7;
+  font-size: var(--small-font);
+  margin-bottom: 2em;
+}
+
+.Quizes .description span {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.Quizes .table {
+  width: 80%;
+  margin: 0 auto;
+  /* background: green; */
+}
+
+.Quizes .top {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.Quizes .table .row,
+.Quizes .table .top-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.3em;
+  padding-left: 0;
+}
+
+.Quizes .table .top-row {
+  background: var(--purple);
+  border-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0.7em;
+  padding-left: 0;
+}
+
+.Quizes .table .top-row {
+  height: 4em;
+  align-items: center;
+}
+
+.Quizes .table .row {
+  height: 3em;
+  align-items: center;
+  color: #000;
+}
+
+.Quizes .table .row.last {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.Quizes .table .row .icon {
+  margin-right: 0.6em;
+  color: var(--purple);
+}
+
+.Quizes .table .top-row p {
+  font-weight: 700;
+  color: #fff;
+}
+
+.Quizes .table .row p,
+.Quizes .table .top-row p {
+  /* text-align: center; */
+  width: 100%;
+  margin-left: 3em;
+}
+
+/* .Quizes .table .row p.right,
+.Quizes .table .top-row p.right {
+  text-align: right;
+  margin-right: 3em;
+} */
+
+.Quizes .row {
+  background: var(--dark-pink);
+  cursor: pointer;
+}
+
+.Quizes .row.even {
+  background: var(--light-pink);
+}
+
+.Quizes .row:hover {
+  background: var(--blue);
+  transition: var(--transition-time);
+}
+
+.Quizes .row:hover > p {
+  color: #fff;
+}
+
+.Quizes .left span {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.Quizes .top span {
+  font-size: var(--large-font);
+  color: var(--blue);
+}
