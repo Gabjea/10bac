@@ -88,10 +88,41 @@ const updateUserProfileController = async (req, res) => {
   }
 }
 
+const uploadProfilePictureController = async(req, res) => {
+  
+  try {
+    const token = req.headers.authorization.split(' ')[1]
+    const user = await functions.getUserByIdFromToken(token)
+    
+    if(!req.files) {
+        res.send({
+            status: false,
+            message: 'No file uploaded'
+        });
+    } else {
+        
+        let file = req.files.file;
+        const path = '/uploads/icons/' + user._id+ ".png"
+        file.mv('.'+path);
+        await functions.updateUserProfile(token, {profile_pic: process.env.HOST+path})
+        res.status(200).json({ message: "Ti-ai actualizat profilul cu succes!" })
+    }
+} catch (err) {
+    console.log(err)
+    res.status(500).send(err);
+}
+}
+
+const getUploadedIcon = (req,res) => {
+ 
+res.sendFile(req.params.img, {root: './uploads/icons'})
+}
 
 module.exports = {
   loginController,
   registerController,
   getUserProfileController,
-  updateUserProfileController
+  updateUserProfileController,
+  uploadProfilePictureController,
+  getUploadedIcon
 };
