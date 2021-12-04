@@ -1,3 +1,19 @@
 .Quiz .question {
   font-size: 20px;
 }
+
+.Quiz input[type='submit'] {
+  display: inline;
+  width: 8em;
+  border-radius: 6px;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+  background: var(--dark-purple);
+  color: #fff;
+  border-bottom: 2px solid var(--dark-purple);
+}
+
+.Quiz input[type='submit']:hover {
+  border-bottom-color: var(--blue);
+}
