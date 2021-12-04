@@ -61,6 +61,7 @@ const addReplyToComment = (req, res) => {
         console.log(current_comment.raspunsuri)
         const newReplyArray = current_comment.raspunsuri
         newReplyArray.push({
+            _id: new mongoose.Types.ObjectId(),
             title,
             owner: {
                 _id: user_id,
@@ -68,23 +69,52 @@ const addReplyToComment = (req, res) => {
                 profile_pic: findedUser.profile_pic,
             }
         })
-    
-    await Comment.findOneAndUpdate({ _id: comment_id }, {
-        raspunsuri: newReplyArray
 
-    },{new: true}, (err, result) => {
-        if (err) return res.send(err)
-        return res.send(result)
+        await Comment.findOneAndUpdate({ _id: comment_id }, {
+            raspunsuri: newReplyArray
+
+        }, { new: true }, (err, result) => {
+            if (err) return res.send(err)
+            return res.send(result)
+        })
+
+
     })
 
-
-})
-
 }
+
+const deleteReplyFromComment = (req, res) => {
+    const comment_id = req.params.comment_id
+    const reply_id = req.params.reply_id
+
+    Comment.findById(comment_id, async (err, findedComment) => {
+        if (err) return res.send(err)
+
+        let updatedReplies = findedComment.raspunsuri
+        var filtered = updatedReplies.filter(function(el) {
+    
+            return el._id.toString() !== reply_id;
+        });
+
+        await Comment.findOneAndUpdate({ _id: comment_id }, {
+            raspunsuri: filtered
+
+        }, { new: true }, (err, result) => {
+            if (err) return res.send(err)
+            return res.send(result)
+        })
+
+
+
+    })
+    
+}
+
 
 module.exports = {
     createComment,
     getAllCommentsFromLesson,
     deleteComment,
-    addReplyToComment
+    addReplyToComment,
+    deleteReplyFromComment
 }

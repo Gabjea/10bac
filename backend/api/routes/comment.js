@@ -10,4 +10,5 @@ router.post('/',middlewares.Auth,controller.createComment)
 router.delete('/:id', middlewares.Auth, controller.deleteComment)
 
 router.post('/reply/:comment_id', middlewares.Auth, controller.addReplyToComment)
+router.delete('/reply/:comment_id/:reply_id', middlewares.Auth, controller.deleteReplyFromComment)
 module.exports = router
