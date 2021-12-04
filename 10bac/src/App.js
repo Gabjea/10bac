@@ -16,11 +16,25 @@ import VectorDef from './routes/Lessons/Pages/VectorDef';
 import VectorOp from './routes/Lessons/Pages/VectorOp';
 import FunctiiDef from './routes/Lessons/Pages/FunctiiDef';
 
-export default function App() {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+
+const App = () => {
+  const [navbarOpened, setNavbarOpened] = useState(true);
+  const toggleNavbar = () => {
+    setNavbarOpened(!navbarOpened);
+  };
+
   return (
     <div className="App">
-      <Nav />
-      <div className="content" style={{ width: isLoggedIn() ? '83%' : '100%' }}>
+      <div className="header">
+        <FontAwesomeIcon icon={faBars} className="hamburger" onClick={toggleNavbar} />
+        <h1>10bac</h1>
+      </div>
+      <Nav opened={navbarOpened} />
+
+      <div className="content" style={{ width: isLoggedIn() ? '80%' : '100%' }}>
         <Routes>
           <Route exact path="/" element={<Root />} />
           <Route path="/materii" element={<Root />} />
@@ -42,4 +56,6 @@ export default function App() {
       </div>
     </div>
   );
-}
+};
+
+export default App;

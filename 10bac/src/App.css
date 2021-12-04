@@ -18,7 +18,7 @@
 .content {
   width: 83%;
   padding: 4em 3em 4em 3em;
-  overflow: auto !important;
+  overflow: auto;
   height: 100vh;
 }
 

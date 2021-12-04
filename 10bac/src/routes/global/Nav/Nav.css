@@ -1,7 +1,7 @@
 .Nav {
   height: 100vh;
   background: var(--purple);
-  width: 17%;
+  width: 20%;
 }
 
 .Nav h1 {
@@ -29,7 +29,8 @@
 
 .Nav .profile-picture {
   height: 7em;
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  clip-path: circle();
 }
 
 .Nav .name {
@@ -77,4 +78,68 @@
 
 .Nav .link .link-name {
   margin-left: 1.2em;
+}
+
+.Nav {
+  transition: 0.5s;
+  transform: translateY();
+  z-index: 1;
+  height: 100vh;
+}
+
+@media (max-width: 1245px) {
+  .Nav.open {
+    display: block !important;
+    position: fixed;
+    width: 300px;
+  }
+
+  .Nav.closed {
+    display: none;
+  }
+  * {
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+
+  .content {
+    overflow: none;
+    width: 100% !important;
+  }
+
+  .App {
+    display: block;
+  }
+
+  .content {
+    overflow: hidden;
+    height: 130vh;
+  }
+}
+
+.App .header {
+  padding: 1.2em 0px 1.2em 3em;
+  display: flex;
+  align-items: center;
+  background: var(--purple);
+  z-index: 2;
+  /* position: fixed; */
+}
+
+.App .header h1 {
+  margin-left: 1em;
+  color: #fff;
+}
+
+.App .hamburger {
+  display: block;
+  color: var(--blue);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media (min-width: 1246px) {
+  .header {
+    display: none !important;
+  }
 }
