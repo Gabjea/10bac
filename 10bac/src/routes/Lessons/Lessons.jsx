@@ -13,7 +13,7 @@ const Lessons = props => {
 
   const lessonsMath = [
     ['Definitie', 'Operatii'], // Vectori
-    ['Lectie1', 'Lectie2'] // Functii
+    ['Notiuni'] // Functii
   ];
 
   const lessonsRomanian = [

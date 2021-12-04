@@ -1,0 +1,21 @@
+.Lesson {
+  line-height: 1.7;
+}
+
+.Lesson .highlight {
+  color: var(--blue);
+  font-size: inherit;
+}
+
+.Lesson h2 {
+  font-size: 22px;
+}
+
+.Lesson ul {
+  /* list-style: lower-latin; */
+}
+
+.Lesson li {
+  display: list-item;
+  list-style-type: circle;
+}
