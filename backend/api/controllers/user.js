@@ -97,7 +97,7 @@ const uploadProfilePictureController = async (req, res) => {
     if (!req.files) {
       res.send({
         status: false,
-        message: 'Niciun fisier nu a fost incarcat!'
+        message: 'Nicio poza nu a fost incarcata!'
       });
     } else {
 
