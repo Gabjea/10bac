@@ -19,7 +19,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --host 127.0.0.1",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -26,6 +26,9 @@ const Nav = () => {
 			.then((data) => {
 				const { profile_pic, name, surname } = data;
 				setUserProfilePic(profile_pic);
+                console.log('====================================');
+                console.log(profile_pic);
+                console.log('====================================');
 				setUserName(name + ' ' + surname);
 			})
 			.catch((err) => {
