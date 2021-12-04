@@ -1,0 +1,81 @@
+.Profile {
+  display: flex;
+  justify-content: center;
+}
+
+.Profile .container {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 3em;
+  border-radius: 10px;
+  background: var(--purple);
+  width: 55em;
+  border-bottom: 10px solid var(--blue);
+}
+
+.Profile form input::placeholder {
+  color: #fff;
+}
+
+.Profile form input {
+  display: block;
+  height: 3.3em;
+  width: 250px;
+  margin-bottom: 0;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: none;
+  background: var(--dark-purple);
+  border: 2px solid var(--dark-purple);
+  border-left-color: var(--blue);
+  color: #fff;
+  outline: none;
+}
+
+.Profile input[type='file'] {
+  display: none;
+}
+
+.Profile form input:focus {
+  border: 2px solid #fff;
+}
+
+.Profile form button {
+  width: 8em;
+  border-radius: 6px;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+  background: var(--dark-purple);
+  color: #fff;
+  border-bottom: 2px solid var(--dark-purple);
+}
+
+.Profile form button:hover {
+  border-bottom-color: var(--blue);
+}
+
+.Profile .left {
+  width: 50%;
+}
+
+.Profile .right {
+  width: 50%;
+}
+
+.Profile .file-label {
+  background: var(--dark-purple);
+  padding: 0.3em;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid var(--dark-purple);
+}
+
+.Profile .file-label:hover {
+  border-bottom-color: var(--blue);
+}

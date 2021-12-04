@@ -43,11 +43,11 @@ export default function Login() {
   };
 
   return (
-    <div className="Register Login">
+    <div className="Register Login Profile">
       <form onSubmit={handleFormSubmit}>
         <div className="left">
           <h2>Intră în cont</h2>
-          <p>Pentru a te conecta la contul tău te rugăm să completezi acest formular..</p>
+          <p>Pentru a te conecta la contul tău te rugăm să completezi acest formular.</p>
           <p>
             Dacă nu ai cont, te rugăm să te înregistrezi <a href="/inregistrare">aici</a>!
           </p>
