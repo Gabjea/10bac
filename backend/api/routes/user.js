@@ -16,4 +16,8 @@ router.post("/profile/picture",middlewares.Auth,controller.uploadProfilePictureC
 router.patch("/profile",middlewares.Auth,controller.updateUserProfileController)
 
 
+router.get("/quizzes", controller.getAllQuizes)
+router.post("/quiz/:quiz_id", controller.submitQuiz)
+router.get('/note', controller.getAllNote)
+
 module.exports = router

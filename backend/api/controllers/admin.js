@@ -14,13 +14,13 @@ const getAllUsers = (req,res)=>{
   }
 
 const createQuiz = async(req,res ) => {
-  const {materie_id,capitol_id,intrebari} = req.body
+  const {materie_id,capitol_id,intrebari,name} = req.body
   const newQuiz = new Quiz({
     _id: new mongoose.Types.ObjectId(),
-    materie_id:materie_id,
-    capitol_id:capitol_id,
-    intrebari: intrebari,
-    
+    materie_id,
+    capitol_id,
+    intrebari,
+    name:name,
   });
   const savedQuiz = await newQuiz.save().catch((err) => {
     console.log("Error: ", err);

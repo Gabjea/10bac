@@ -11,7 +11,6 @@ router.get("/users",controller.getAllUsers)
 
 // Quizzes
 router.post("/quiz", controller.createQuiz)
-router.get("/quizes", controller.getAllQuizes)
 router.delete('/quiz', controller.deleteQuiz)
 router.patch('/quiz', controller.updateQuiz)
 
