@@ -1,6 +1,7 @@
 const User = require("../../models/user");
 const Quiz = require("../../models/quiz");
 const SubBac = require("../../models/sub_bac");
+const UploadSubBac = require('../../models/upload_bac')
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -103,9 +104,8 @@ const deleteSubBac = (req, res) => {
   })
 }
 
-const getPendingSubsBac = (req, res) => {
-  const id = req.params.id
-
+const getPendingSubsBac = async(req, res) => {
+  
 }
 
 

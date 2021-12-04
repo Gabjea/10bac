@@ -15,6 +15,8 @@ router.get("/profile/:id",middlewares.Auth,controller.getUserProfileFromIdContro
 router.post("/profile/picture",middlewares.Auth,controller.uploadProfilePictureController)
 router.patch("/profile",middlewares.Auth,controller.updateUserProfileController)
 
+router.get("/subs_bac", controller.getAllSubBac)
+router.post("/sub_bac/:id", controller.submitSubBac)
 
 router.get("/quizzes", controller.getAllQuizes)
 router.post("/quiz/:quiz_id", controller.submitQuiz)
