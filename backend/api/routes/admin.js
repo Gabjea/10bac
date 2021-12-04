@@ -15,7 +15,9 @@ router.get("/quizes", controller.getAllQuizes)
 router.delete('/quiz', controller.deleteQuiz)
 router.patch('/quiz', controller.updateQuiz)
 
-
+// Sub Bac
 router.post("/sub_bac", controller.createSubBac)
+router.get("/subs_bac", controller.getAllSubBac)
+router.delete('/sub_bac', controller.deleteSubBac)
 
 module.exports = router
