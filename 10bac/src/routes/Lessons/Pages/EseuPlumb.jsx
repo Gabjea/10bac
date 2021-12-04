@@ -1,4 +1,5 @@
 import React from "react";
+import Comments from "../../Comments/Comments";
 
 export default function EseuPlumb() {
 	return (
@@ -138,6 +139,12 @@ export default function EseuPlumb() {
 					simbolistă”.
 				</p>
 			</div>
+			<br />
+			<hr />
+			<br />
+			<Comments 
+                lessonID = {window.location.href.split('/').reverse()[0]}
+            />
 		</div>
 	);
 }
