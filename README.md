@@ -88,7 +88,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] [Auth] 
+- [x][Auth] 
 - [x] [SchoolSubjectList]
 - [x] [SubjectChapters&Lessons] 
 - [x] [LessonComments] 
