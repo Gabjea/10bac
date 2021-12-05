@@ -26,6 +26,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import History from './routes/History/History';
 import Evaluare from './routes/Admin/Evaluare/Evaluare';
+import Subiecte from './routes/Admin/Subiecte/Subiecte';
+import Evenimente from './routes/Admin/Evenimente/Evenimente';
 
 const App = () => {
   const [navbarOpened, setNavbarOpened] = useState(true);
@@ -64,6 +66,8 @@ const App = () => {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/teste" element={<Teste />} />
           <Route path="/admin/quiz" element={<Evaluare />} />
+          <Route path="/admin/subiecte" element={<Subiecte />} />
+          <Route path="/admin/evenimente" element={<Evenimente />} />
         </Routes>
       </div>
     </div>
