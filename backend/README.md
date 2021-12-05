@@ -19,7 +19,7 @@ npm run dev
 
 ## API ROUTES
 
-1.User
+1. User
   -Auth
   -Profile
   -Sub Bac
