@@ -176,21 +176,20 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Authors
 
-👤 **Gânju Alexandru**
+🧙‍♂️ **Gânju Alexandru**
 
 - Discord: [@Gânju](https://discordapp.com/users/254597100602523648)
 - Github: [@Gabjea](https://github.com/Gabjea)
 
+👳**Feduș Robert**
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+- Discord: [@robertfedus](https://discordapp.com/users/269884751416918019)
+- Github: [@robertfedus](https://github.com/robertfedus)
 
-* []()
-* []()
-* []()
+👾♂️ **Stana Andrei**
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+- Discord: [@StanaAndrei](https://discordapp.com/users/466946127179022346)
+- Github: [@StanaAndrei](https://github.com/StanaAndrei)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -204,5 +203,3 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/Gabjea/10bac.svg?style=for-the-badge
 [issues-url]: https://github.com/Gabjea/10bac/issues
 
-
-'+
