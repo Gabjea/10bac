@@ -28,6 +28,7 @@ import History from './routes/History/History';
 import Evaluare from './routes/Admin/Evaluare/Evaluare';
 import Subiecte from './routes/Admin/Subiecte/Subiecte';
 import Evenimente from './routes/Admin/Evenimente/Evenimente';
+import Stripe from './routes/Stripe/Stripe';
 
 const App = () => {
   const [navbarOpened, setNavbarOpened] = useState(true);
@@ -68,6 +69,7 @@ const App = () => {
           <Route path="/admin/quiz" element={<Evaluare />} />
           <Route path="/admin/subiecte" element={<Subiecte />} />
           <Route path="/admin/evenimente" element={<Evenimente />} />
+          <Route path="/stripe" element={<Stripe />} />
         </Routes>
       </div>
     </div>
