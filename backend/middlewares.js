@@ -55,7 +55,7 @@ const hasSubscription = async (req, res, next) => {
   const user = await functions.getUserByIdFromToken(token);
 
   if (user) {
-    if (user.subscription !== true) return res.status(401).send("Unauthorized");
+    if (user.subscription !== true) return res.status(402).send("subscription-required");
     else next();
   } else return res.send("User not found!");
 };
