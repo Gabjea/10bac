@@ -1,8 +1,6 @@
-<h1 align="center">Welcome to backend 👋</h1>
+<h1 align="center">Welcome to 10bac-backend 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/backend" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/backend.svg">
-  </a>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
