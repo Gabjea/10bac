@@ -11,8 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Gabjea/10bac">
-    <img src="https://imgur.com/QDZcXNW" alt="Logo" width="400" height="200">
-  </a>
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/NyM5m0G/Untitled-3.png" alt="Logo" border="0"></a>  </a>
 
 <h3 align="center">project_title</h3>
 
