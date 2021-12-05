@@ -60,6 +60,7 @@ const registerController = async (req, res) => {
       email,
       password: hashedPassword,
       role: "user",
+      subscription: false
     });
     const savedUser = await newUser.save().catch((err) => {
       console.log("Error: ", err);
