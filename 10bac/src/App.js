@@ -25,6 +25,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import History from './routes/History/History';
+import Evaluare from './routes/Admin/Evaluare/Evaluare';
 
 const App = () => {
   const [navbarOpened, setNavbarOpened] = useState(true);
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/teste" element={<Quizes />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/teste" element={<Teste />} />
+          <Route path="/admin/quiz" element={<Evaluare />} />
         </Routes>
       </div>
     </div>
