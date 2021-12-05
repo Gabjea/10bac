@@ -19,6 +19,8 @@ router.post("/sub_bac", controller.createSubBac)
 router.delete('/sub_bac/:id', controller.deleteSubBac)
 router.get("/sub_bac", controller.getPendingSubsBac)
 
+router.post('/sub_bac/:id', controller.giveUserGrade)
+
 router.post('/event', controller.createEvent)
 
 
