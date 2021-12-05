@@ -2,7 +2,7 @@
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][https://img.shields.io/github/stars/Gabjea/10bac.svg?style=for-the-badge][stars-url]
+[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
