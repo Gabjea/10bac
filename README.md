@@ -129,7 +129,7 @@ See the [open issues](https://github.com/Gabjea/10bac/issues) for a full list of
 [contributors-url]: https://github.com/Gabjea/10bac/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Gabjea/10bac.svg?style=for-the-badge
 [forks-url]: https://github.com/Gabjea/10bac/network/members
-[stars-shield]: https://img.shields.io/github/stars/Gabjea/10bac.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/Gabjea/10bac
 [stars-url]: https://github.com/Gabjea/10bac/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Gabjea/10bac.svg?style=for-the-badge
 [issues-url]: https://github.com/Gabjea/10bac/issues
