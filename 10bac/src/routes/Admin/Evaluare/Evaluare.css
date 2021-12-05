@@ -1,0 +1,50 @@
+.EvaluareAdmin input {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.EvaluareAdmin form input,
+.EvaluareAdmin form select {
+  display: block;
+  height: 3.3em;
+  margin-bottom: 0;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: none;
+  background: var(--dark-purple);
+  border: 2px solid var(--dark-purple);
+  border-left-color: var(--blue);
+  color: #fff;
+  outline: none;
+}
+
+.EvaluareAdmin form input[type='text'],
+.EvaluareAdmin form input[type='number'],
+.EvaluareAdmin form select {
+  width: 350px;
+}
+
+.EvaluareAdmin form input:focus {
+  border: 2px solid #fff;
+}
+
+.EvaluareAdmin form input::placeholder {
+  color: white;
+  font-style: italic;
+}
+
+.EvaluareAdmin form input[type='submit'] {
+  width: 8em;
+  border-radius: 6px;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+  background: var(--dark-purple);
+  color: #fff;
+  border-bottom: 2px solid var(--dark-purple);
+}
+
+.EvaluareAdmin form input[type='submit']:hover {
+  border-bottom-color: var(--blue);
+}
