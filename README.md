@@ -88,18 +88,18 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-- [Auth] 
-- [SchoolSubjectList]
-- [SubjectChapters&Lessons] 
-- [LessonComments] 
-    -[Replies]
-- [ExamModels]
-    -[UserEvaluation] 
-- [Quizzes]
-- [Grades]
-- [Profile]
-- [Admin]
-- [Events]
+- [x] [Auth] 
+- [x] [SchoolSubjectList]
+- [x] [SubjectChapters&Lessons] 
+- [x] [LessonComments] 
+    - [x] [Replies]
+- [x] [ExamModels]
+    - [x] [UserEvaluation] 
+- [x] [Quizzes]
+- [x] [Grades]
+- [x] [Profile]
+- [x] [Admin]
+- [x] [Events]
 
 
 See the [open issues](https://github.com/Gabjea/10bac/issues) for a full list of proposed features (and known issues).
