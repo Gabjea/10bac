@@ -86,7 +86,7 @@ const Root = () => {
 
         {news.map((New, index) => {
           return (
-            <a href="">
+            <a href={New.link}>
               <div className={`row ${index % 2 === 0 ? 'even' : ''}`}>
                 <p className="left">{New.title}</p>
                 <p className="right">{New.date.replace('T', '/').replace('Z', '')}</p>
@@ -103,7 +103,7 @@ const Root = () => {
         <p className="description">
           Pentru a începe te rugăm să alegi o materie pe care dorești să o studiezi.
           <br />
-          Până acum avem <span>4</span> materii disponibile și un total de <span>22</span> de capitole!
+          Până acum avem <span>13</span> materii disponibile și un total de <span>110</span> de capitole!
         </p>
       </div>
 

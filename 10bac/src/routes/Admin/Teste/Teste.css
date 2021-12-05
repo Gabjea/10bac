@@ -1,0 +1,34 @@
+.TesteAdmin .wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 80%; */
+  margin-bottom: 3em;
+}
+
+.TesteAdmin .wrapper img {
+  height: 15em;
+  margin-left: 3em;
+}
+
+.TesteAdmin .mark {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.TesteAdmin .marks {
+  display: flex;
+  justify-content: center;
+}
+
+.TesteAdmin .mark {
+  font-size: 27px;
+  margin-left: 1em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.TesteAdmin .mark:hover {
+  color: var(--purple);
+}

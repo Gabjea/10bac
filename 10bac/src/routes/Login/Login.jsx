@@ -55,9 +55,9 @@ export default function Login() {
           <img src={studentImg} alt="Elev" />
         </div>
         <div className="right">
-          <input ref={emailRef} type="email" placeholder="Enter email" name="email" />
+          <input ref={emailRef} type="email" placeholder="Introdu email-ul" name="email" />
 
-          <input ref={passwordRef} type="password" placeholder="Enter Password" name="psw" />
+          <input ref={passwordRef} type="password" placeholder="Introdu parola" name="psw" />
 
           <button type="submit">Trimite</button>
           <span

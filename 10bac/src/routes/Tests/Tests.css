@@ -1,3 +1,24 @@
 .Tests {
   text-align: center;
 }
+
+.Tests button {
+  display: inline;
+  width: 8em;
+  border-radius: 6px;
+  height: 2.5em;
+  border: none;
+  cursor: pointer;
+  background: var(--dark-purple);
+  color: #fff;
+  border-bottom: 2px solid var(--dark-purple);
+  margin-left: 1em;
+}
+
+.Tests button:hover {
+  border-bottom-color: var(--blue);
+}
+
+.Tests input[type='file'] {
+  margin-top: 2em;
+}
