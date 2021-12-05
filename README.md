@@ -125,16 +125,6 @@ This is an example of how to list things you need to use the software and how to
 See the [open issues](https://github.com/Gabjea/10bac/issues) for a full list of proposed features (and known issues).
 
 
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
-
-
 ## Authors
 
 🧙‍♂️ **Gânju Alexandru**
@@ -163,4 +153,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [stars-url]: https://github.com/Gabjea/10bac/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Gabjea/10bac.svg?style=for-the-badge
 [issues-url]: https://github.com/Gabjea/10bac/issues
-
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/Gabjea/10bac/LICENSE.TXT
