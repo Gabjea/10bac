@@ -49,9 +49,21 @@ const hasAdmin = async (req, res, next) => {
   } else return res.send("User not found!");
 };
 
+const hasSubscription = async (req, res, next) => {
+  const token = getToken(req)
+
+  const user = await functions.getUserByIdFromToken(token);
+
+  if (user) {
+    if (user.subscription !== true) return res.status(401).send("Unauthorized");
+    else next();
+  } else return res.send("User not found!");
+};
+
 module.exports = {
   notFound,
   errorHandler,
   Auth,
   hasAdmin,
+  hasSubscription
 };

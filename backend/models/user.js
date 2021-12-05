@@ -25,6 +25,10 @@ const UserSchema = mongoose.Schema({
     role: {
         type: String,
         required: true
+    },
+    subscription: {
+        type: Boolean,
+        required: true,
     }
 })
 

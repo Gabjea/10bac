@@ -3,8 +3,9 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 const cookieParser = require("cookie-parser")
-
+const bodyParser = require('body-parser');
 require("dotenv").config();
+
 
 const app = express();
 const middlewares = require("./middlewares");
@@ -40,7 +41,15 @@ app.get("/", (req, res) => {
 app.get("/uploads/icons/:img", controller.getUploadedIcon)
 app.get("/uploads/sub_bac/:img", controller.getUploadedSubBac)
 app.use("/api/v1", api);
+app.use(express.static('public'));
 
+
+
+
+
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
