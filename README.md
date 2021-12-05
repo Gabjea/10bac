@@ -5,15 +5,13 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/Gabjea/10bac">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://imgur.com/QDZcXNW" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">project_title</h3>
