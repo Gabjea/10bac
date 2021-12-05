@@ -19,19 +19,24 @@ npm run dev
 
 ## API ROUTES
 
-1. User
-  -Auth
-  -Profile
-  -Sub Bac
-  -Quiz
-  -Grade
-  -Events
+
+-  User
+   - ![#f03c15]''
+   - 
+-  Auth
+   - ![#f03c15]'POST' 'http://127.0.0.1:5000/api/v1/user/register'
+-  Profile
+-  Sub Bac
+-  Quiz
+-  Grade
+-  Events
+  
+
+
+
 
 
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
