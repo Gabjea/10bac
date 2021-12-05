@@ -24,7 +24,7 @@ npm run dev
    - ![#f03c15]''
    - 
 -  Auth
-   - `Resgister` ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)`POST` `http://127.0.0.1:5000/api/v1/user/register`
+   - `Resgister` ![#f03c15](https://convertingcolors.com/plain-B82C38.svg)`POST` `http://127.0.0.1:5000/api/v1/user/register`
    - `Login` ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)`POST` `http://127.0.0.1:5000/api/v1/user/login`
 -  Profile
 -  Sub Bac
