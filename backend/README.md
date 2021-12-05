@@ -17,6 +17,18 @@ npm install
 npm run dev
 ```
 
+## API ROUTES
+
+1.User
+  -Auth
+  -Profile
+  -Sub Bac
+  -Quiz
+  -Grade
+  -Events
+
+
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
