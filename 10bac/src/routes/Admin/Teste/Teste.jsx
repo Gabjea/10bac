@@ -3,8 +3,17 @@ import "./Teste.css";
 import axios from "axios";
 import globalVars from "../../../globalVars";
 import { getCookie } from "../../../utils";
+import { getUserDataFromJwtReq } from "../../../utils";
 
 const Teste = () => {
+	React.useEffect(() => {
+		getUserDataFromJwtReq().then((data) => {
+			if (data.role !== "admin") {
+				window.location.replace("/");
+			}
+		});
+	}, []);
+
 	const [tests, setTests] = React.useState([]);
 
 	React.useEffect(() => {
@@ -25,9 +34,10 @@ const Teste = () => {
 					console.error(err.status);
 					alert("error!!!!");
 				}
-			).catch(err => {
-                alert('catch err');
-            })
+			)
+			.catch((err) => {
+				alert("catch err");
+			});
 	}, []);
 	// nota: valoarea
 
