@@ -112,12 +112,12 @@ See the [open issues](https://github.com/Gabjea/10bac/issues) for a full list of
 - Discord: [@Gânju](https://discordapp.com/users/254597100602523648)
 - Github: [@Gabjea](https://github.com/Gabjea)
 
-👳**Feduș Robert**
+👳 **Feduș Robert**
 
 - Discord: [@robertfedus](https://discordapp.com/users/269884751416918019)
 - Github: [@robertfedus](https://github.com/robertfedus)
 
-👾**Stana Andrei**
+👾 **Stana Andrei**
 
 - Discord: [@StanaAndrei](https://discordapp.com/users/466946127179022346)
 - Github: [@StanaAndrei](https://github.com/StanaAndrei)
