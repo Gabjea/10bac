@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getCookie } from "../../utils";
-import "./Stripe.css";
+//import "./Stripe.css";
 
 const ProductDisplay = () => (
 	<section>
