@@ -20,8 +20,8 @@ export default function History() {
           setNotes(res.data);
         },
         err => {
-          alert('error');
           console.error(err);
+          window.location.replace('/stripe');
         }
       );
   }, []);

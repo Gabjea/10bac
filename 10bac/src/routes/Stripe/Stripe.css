@@ -9,7 +9,7 @@
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}/*/
+}
 section {
   background: #ffffff;
   display: flex;
@@ -50,6 +50,7 @@ img, svg {
   width: 54px;
   height: 57px;
 }*/
+/*
 h3,
 h5 {
   font-style: normal;
@@ -80,3 +81,4 @@ button {
 button:hover {
   opacity: 0.8;
 }
+*/
