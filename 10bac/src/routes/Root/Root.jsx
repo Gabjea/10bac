@@ -18,6 +18,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { isLoggedIn } from '../../utils';
+import globalVars from '../../globalVars';
+import axios from 'axios';
+import { getCookie } from '../../utils';
 
 const Root = () => {
   React.useEffect(() => {
@@ -44,13 +47,61 @@ const Root = () => {
     ['Filosofie', faQuestion, 8, 9]
   ];
 
+  const [news, setNews] = React.useState([]);
+
+  React.useEffect(() => {
+    //console.log(lessonID);
+    axios
+      .get(`${globalVars.apiPrefix}/user/events`, {
+        headers: {
+          Authorization: getCookie('jwt')
+        }
+      })
+      .then(
+        res => {
+          setNews(res.data);
+        },
+        err => {
+          console.error(err);
+          alert('error!');
+        }
+      );
+  }, []);
+
   return (
     <div className="Root">
+      <div className="top">
+        <h2>Evenimente din educație</h2>
+
+        <p className="description">
+          Dacă doreși să iei parte la webinarii cu tema educației în România, ți-am pregătit mai jos o listă!
+        </p>
+      </div>
+
+      <div className="table">
+        <div className="top-row">
+          <p className="left">Nume eveniment</p>
+          <p className="right">Data și ora</p>
+        </div>
+
+        {news.map((New, index) => {
+          return (
+            <a href="">
+              <div className={`row ${index % 2 === 0 ? 'even' : ''}`}>
+                <p className="left">{New.title}</p>
+                <p className="right">{New.date.replace('T', '/').replace('Z', '')}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      <br />
+      <br />
       <div className="top">
         <h2>Materii disponibile</h2>
 
         <p className="description">
-          Bine ai venit! Pentru a începe te rugăm să alegi o materie pe care dorești să o studiezi.
+          Pentru a începe te rugăm să alegi o materie pe care dorești să o studiezi.
           <br />
           Până acum avem <span>4</span> materii disponibile și un total de <span>22</span> de capitole!
         </p>
