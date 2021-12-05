@@ -3,6 +3,7 @@ const Quiz = require("../../models/quiz");
 const Nota = require("../../models/nota");
 const SubBac = require("../../models/sub_bac");
 const UploadSubBac = require("../../models/upload_bac");
+const Event = require("../../models/event");
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -203,7 +204,7 @@ const submitSubBac = async(req,res) => {
     const token = req.headers.authorization.split(' ')[1]
     const user = await functions.getUserByIdFromToken(token)
     const path ='/uploads/sub_bac/' + sub_bac_id+user._id + ".jpg"
-    const file = await functions.uploadFile(req.files,path,'jpg')
+    const file = await functions.uploadFile(req.files,path,'png')
 
     if (!file)
       res.send({
@@ -240,6 +241,13 @@ const submitSubBac = async(req,res) => {
 
 }
 
+const getAllEvents = (req,res) => {
+  Event.find({}, (err,users) =>{
+    if (err) res.send(err)
+    else res.send(users)
+  })
+}
+
 module.exports = {
   loginController,
   registerController,
@@ -253,5 +261,6 @@ module.exports = {
   submitQuiz,
   getAllNote,
   getAllSubBac,
-  submitSubBac
+  submitSubBac,
+  getAllEvents
 };

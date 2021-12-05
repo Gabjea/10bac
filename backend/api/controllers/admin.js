@@ -2,6 +2,7 @@ const User = require("../../models/user");
 const Quiz = require("../../models/quiz");
 const SubBac = require("../../models/sub_bac");
 const UploadSubBac = require('../../models/upload_bac')
+const Event = require('../../models/event')
 const mongoose = require("../../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -105,11 +106,33 @@ const deleteSubBac = (req, res) => {
 }
 
 const getPendingSubsBac = async(req, res) => {
+  UploadSubBac.find({status: 'pending'}, (err,users) =>{
+    if (err) res.send(err)
+    else res.send(users)
+  })
+}
+
+const createEvent = async(req,res) => {
+  const {title, link,date} = req.body
+  const newEvent = new Event({
+    _id: new mongoose.Types.ObjectId(),
+    title,
+    link,
+    date
+  });
+
+    const savedEvent = await newEvent.save().catch((err) => {
+      console.log("Error: ", err);
+      res.status(500).json({ error: "Evenimentul nu a putut fi adaugat!" });
+    });
+  
+    if (savedEvent) res.json({ message: "Evenimentul a fost adaugat cu succes!" });
   
 }
 
-
-
+const deleteEvent = (req,res) => {
+  //await Event.findByIdAndDelete()
+}
 module.exports = {
     getAllUsers,
     createQuiz,
@@ -119,5 +142,7 @@ module.exports = {
     createSubBac,
     getAllSubBac,
     deleteSubBac,
-    getPendingSubsBac
+    getPendingSubsBac,
+    createEvent,
+    deleteEvent
 }

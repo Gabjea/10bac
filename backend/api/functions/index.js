@@ -77,7 +77,7 @@ const updateQuiz = async(body) => {
 
 const uploadFile = async(files,path,extension) => {
     try{
-
+       
     if (!files) {
         return null
       } else {

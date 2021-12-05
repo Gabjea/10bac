@@ -22,4 +22,7 @@ router.get("/quizzes", controller.getAllQuizes)
 router.post("/quiz/:quiz_id", controller.submitQuiz)
 router.get('/note', controller.getAllNote)
 
+
+router.get('/events', controller.getAllEvents)
+
 module.exports = router
